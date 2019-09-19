@@ -12,12 +12,12 @@ int main(){
 	calculos(numero, &doble, &triple);
 	int *puntero = &doble;
 	int *puntero2 = &triple;
-	cout<<"El doble de 2 es: "<<puntero<<endl;
-	cout<<"El triple de 3 es: "<<puntero<<endl;
-	cout<<"El doble de 2 es: "<<&puntero<<endl;
-	cout<<"El triple de 3 es: "<<&puntero<<endl;
-	cout<<"El doble de 2 es: "<<(*puntero)<<endl;
-	cout<<"El triple de 3 es: "<<(*puntero2)<<endl;
+	cout<<"\nDireccion almacenada del puntero doble es: "<<puntero<<endl;
+	cout<<"Direccion almacenada del puntero triple es: "<<puntero<<endl;
+	cout<<"Direccion de puntero doble es: "<<&puntero<<endl;
+	cout<<"Direccion de puntero triple es: "<<&puntero<<endl;
+	cout<<"Valor de variable apuntada por puntero doble es: "<<(*puntero)<<endl;
+	cout<<"Valor de variable apuntada por puntero triple es: "<<(*puntero2)<<endl;
 	
 	system("pause");
 	return 0;

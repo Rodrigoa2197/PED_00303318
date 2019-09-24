@@ -1,0 +1,13 @@
+//Actividad 10 Infija a postfija 
+
+1) A-B/(C*D$E)
+A-B/(C*DE$)   
+A-B(CDE$*)/
+AB(CDE$*)/-
+ABCDE$*/-
+
+2)((A+B)*C-(D-E))$(F+G)
+((AB+)*C-(DE-))(FG+)$
+AB+C*DE--FG+$
+
+

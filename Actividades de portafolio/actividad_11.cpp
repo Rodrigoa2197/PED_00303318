@@ -12,7 +12,7 @@ struct ColaCircular{
 	int *vcola;
 }cola1;
 
-int ColaCircular(int tamano){
+void ColaCircular(int tamano){
 	cola1.maximo = tamano;
 	cola1.vcola = new int[cola1.maximo];
 	cola1.frente = 0;
@@ -21,44 +21,45 @@ int ColaCircular(int tamano){
 
 int entradaElemento(int dato){
 	if(cola1.n==cola1.maximo){
-		cout << "Cola llena";
+		cout << "Cola llena\n";
 	}else{
 		int ubicacion = (cola1.frente+cola1.n)% cola1.maximo;
 		cola1.vcola[ubicacion] = dato;
-		cout << " Frente " << cola1.frente << " n " << cola1.n << " maximo " << cola1.maximo << " ubicacion " << ubicacion;
+		cout << "\n Frente " << cola1.frente << " n " << cola1.n << " maximo " << cola1.maximo << " ubicacion " << ubicacion;
 		cola1.n++;
 	}
 }
 
 int salidaElemento(){
 	int axu = cola1.vcola[cola1.frente];
-	cout << "Sale elemento: " << axu;
+	cout << "\nSale elemento: " << axu;
 	cola1.frente = (cola1.frente+1)%cola1.maximo;
 	cola1.n--;
-	cout << "Frente " << cola1.frente << "n " << cola1.n;
+	cout << " Frente " << cola1.frente << " n " << cola1.n;
 }
 
 int main(){
-	ColaCircular(tamano);
-	entradaElemento(dato);
+	//ColaCircular(tamano);
+	//entradaElemento(dato);
+	//salidaElemento();
+	ColaCircular(10);
+	entradaElemento(1); //Ingresar datos
+	entradaElemento(2);
+	entradaElemento(3);
+	entradaElemento(4);
+	entradaElemento(5);
+	entradaElemento(6);
+	salidaElemento(); //Sacar datos
 	salidaElemento();
-	ColaCircular objCircular = new int ColaCircular(10);
-	objCircular.entradaElemento(1); //Ingresar datos
-	objCircular.entradaElemento(2);
-	objCircular.entradaElemento(3);
-	objCircular.entradaElemento(4);
-	objCircular.entradaElemento(5);
-	objCircular.entradaElemento(6);
-	objCircular.salidaElemento(); //Sacar datos
-	objCircular.salidaElemento();
-	objCircular.salidaElemento();
-	objCircular.entradaElemento(7);
-	objCircular.entradaElemento(8);
-	objCircular.entradaElemento(9);
-	objCircular.entradaElemento(10);
-	objCircular.entradaElemento(11);
-	objCircular.entradaElemento(12);
+	salidaElemento();
+	entradaElemento(7);
+	entradaElemento(8);
+	entradaElemento(9);
+	entradaElemento(10);
+	entradaElemento(11);
+	entradaElemento(12);
 	delete[] cola1.vcola;
+	cout<<endl;
 	system("pause");
 	return 0;
 }

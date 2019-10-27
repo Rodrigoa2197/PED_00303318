@@ -204,6 +204,27 @@ void mostrarLista() {
     }
 }
 
+void mostrarListaEspanol() {
+    Nodo *s = pInicio;
+
+    while (s != NULL) {
+        if(s->dato.espanol==true){
+            mostrarLibro(s->dato);
+        }
+        s = s->sig;
+    }
+}
+
+void mostrarListaScienceFiction() {
+    Nodo *s = pInicio;
+
+    while (s != NULL) {
+        if(s->dato.genero==ciencia_ficcion){
+            mostrarLibro(s->dato);
+        }
+        s = s->sig;
+    }
+}
 void eliminarLibro(){
     int unISBN = 0;
     cout << "ISBN de libro a eliminar: ";
@@ -217,6 +238,24 @@ void eliminarLibro(){
     }
     if(p == NULL){
         cout << "Libro a borrar NO existe" << endl;
+        return;
+    }
+    if(q == NULL)
+        pInicio = p->sig;
+    else
+        q->sig = p->sig;
+    delete(p);
+    cout << "Libro borrado!" << endl;
+}
+
+void eliminarLibroMisterio(){
+    Nodo *p = pInicio, *q = NULL;
+
+    while(p != NULL && (p->dato).genero != misterio){
+        q = p;
+        p = p->sig;
+    }
+    if(p == NULL){
         return;
     }
     if(q == NULL)
@@ -270,8 +309,19 @@ int main(){
                     cout << "El libro NO se encuentra" << endl;
                 //cout << "El libro " << (buscarLibro() ? "SI" : "NO") << " se encuentra" << endl;
             break;
-            case 5: continuar = false;
-            break;
+            case 5: cout << "Listando..." << endl;
+                mostrarListaEspanol();
+                break;
+            case 6: cout << "Listando..." << endl;
+                mostrarListaScienceFiction();
+                break;
+            case 7: cout << "Eliminando..." << endl;
+                for(int i=0;i<hack;i++){
+                    eliminarLibroMisterio();
+                }
+                break;
+            case 8: continuar = false;
+                break;
             default: cout << "Opcion erronea!" << endl;
             break;
         }
